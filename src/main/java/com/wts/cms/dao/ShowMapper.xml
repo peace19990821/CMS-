@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.wts.cms.dao.ShowMapper">
+  	<select id="selects" resultType="show">
+  		select * from cms_show order by created desc
+  	</select>
+  	
+  	<delete id="del">
+  		delete from cms_show where id = #{id}
+  	</delete>
+  	
+  	<insert id="addShow">
+  		insert into cms_show set id = #{id},text = #{text},url=#{url},userId = #{userId},created=now()
+  	</insert>
+  </mapper>
